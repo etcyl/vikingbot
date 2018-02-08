@@ -2,11 +2,15 @@
 """
 Created on Wed Feb 07 23:53:00 2018
 
-@author: Etcyl
+@author: Etcyl*
+         ECE 479: Intelligent Robotics 2 (Machine Vision and Learning)
+         Portland, OR
+         
+         Various Vikingbot functions used here cited from: https://github.com/mlherd/vikingbot
 """
 
 #import modules, set constants here
-import sci-kit #module for learners
+#from sklearn import linear_model
 import motor_controller as MC #modules for Vikingbot control
 import ultrasonic as US
 import RPi.GPIO as GPIO
@@ -20,8 +24,8 @@ GPIO.setmode(GPIO.BCM)
 def obstacle_check():
     #get sensor reading
     sensor_reading = get_sensor_reading()
-    learner_class = get_class(sensor_reading)
-    emote_and_drive(learner_class)
+    #learner_class = get_class(sensor_reading)
+    #emote_and_drive(learner_class)
     return
 
 def get_sensor_reading():
@@ -29,16 +33,16 @@ def get_sensor_reading():
     readings = [0]*3 #make list of 3 zeroes to store the 3 readings (front, left, and right)
     readings[0] = ultrasonic_sensor.measure() #get X3 parameter for learner, front obstacle detection
     time.sleep(0.1)
-    vikingbotMotors.turnLeft() #get X2 parameter for learner, left obstacle detection
+    MC.MotorController.turnLeft() #get X2 parameter for learner, left obstacle detection
     GPIO.cleanup() 
     readings[1] = ultrasonic_sensor.measure() 
     time.sleep(0.1)
-    vikingbotMotors.turnRight() #turn right twice because we originally turned left from facing forward
+    MC.MotorController.turnRight() #turn right twice because we originally turned left from facing forward
     GPIO.cleanup()     
-    vikingbotMotors.turnRight()
+    MC.MotorController.turnRight()
     GPIO.cleanup() 
     readings[2] = ultrasonic_sensor.measure()  #get X1 parameter for learner, right obstacle detection
-    vikingbotMotors.turnLeft() #Face front again
+    MC.MotorController.turnLeft() #Face front again
     GPIO.cleanup()
     return readings 
     
@@ -49,16 +53,16 @@ def emote_and_drive(learner_class):
     if learner_class == 1:
         drive(0)
     elif learner_class == 2:
-        emote(front)
+        #emote(front)
         drive(2)
     elif learner_class == 3:
-        emote(left)
+        #emote(left)
         drive(3)
     elif learner_class == 4:
-        emote(right)
+        #emote(right)
         drive(4)
     elif learner_class == 5:
-        emote(all)
+        #emote(all)
         drive(5)
     else:
         print "Error: learner_class not mapping to known instance"
@@ -77,29 +81,29 @@ def drive(position_to_drive):
         #generate random number between 1 and 3
         num = 1
         if num == 1:
-            vikingbotMotors.turnLeft()
+            MC.MotorController.turnLeft()
         elif num == 2:
-            vikingbotMotors.goForward()
+            MC.MotorController.goForward()
         elif num == 3:
-            vikingbotMotors.turnRight()
+            MC.MotorController.turnRight()
     elif position_to_drive == 1:
-        num 2
+        num = 2
         if num == 1:
-            vikingbotMotors.turnLeft()
+            MC.MotorController.turnLeft()
         else:
-            drive forward
+            MC.MotorController.goForward()
     elif position_to_drive == 2:
-        num 3
+        num = 3
         if num == 2:
-            vikingbotMotors.goForward()
+            MC.MotorController.goForward()
         else:
-            vikingbotMotors.turnRight()
+            MC.MotorController.turnRight()
     elif position_to_drive == 3:
-            vikingbotMotors.goForward()
+            MC.MotorController.goForward()
     else:
-        print Error
+        print "Error"
         
-    vikingbotMotors.set_SleepTime(2)   
+    MC.MotorController.set_SleepTime(2)   
     GPIO.cleanup() 
     return
     
