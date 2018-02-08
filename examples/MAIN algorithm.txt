@@ -1,6 +1,5 @@
 ﻿Set constants, import modules, do all initialization here
 
-
 MAIN: 
 1. obstacle_check(all) #Check front, left, and right for obstacles
    1. Return learner classification
@@ -29,60 +28,3 @@ MAIN:
          1. emote(all);
          2. drive(behind)
          3. Return to MAIN
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-sonic_sensor_check(all): 
-1. Get and set front, left, and right sensor readings
-2. Return sensor readings
-
-
-classify_sensor_reading(sensor readings): 
-1. Set sensor readings to classifier and get class
-2. Return class
-
-
-obstacle_check(sensor readings): 
-1. Call sonic_sensor_check(), set result to input for classify_sensor_reading()
-2. Call classify_sensor_reading(), set result for return variable
-3. Return class label from classify_sensor_reading()
-
-
-drive(left, right, front, behind)
-# left == 1, front == 2, right == 3, behind == 4
-1. If empty:
-   1. Get random int between 1 and 3
-   2. If num == 1:
-      1. Go left
-   1. Else if num == 2:
-      1. Go forward
-   1. Else if num == 3:
-      1. Go right
-1. If left&front:
-   1. Get a random int between 1 and 2
-   2. If num == 1:
-      1. Go left
-   1. Else go front
-1. If front&right
-   1. Get a random int between 2 and 3
-   2. If num == 2:
-      1. Go front
-   1. Else go right
-1. If behind
-   1. Go backwards and turn left / right
-1. Return
