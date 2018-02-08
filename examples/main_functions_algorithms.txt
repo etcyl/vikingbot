@@ -20,20 +20,20 @@ drive(left, right, front, behind)
    1. Get random int between 1 and 3
    2. If num == 1:
       1. Go left
-   1. Else if num == 2:
+   3. Else if num == 2:
       1. Go forward
-   1. Else if num == 3:
+   4. Else if num == 3:
       1. Go right
-1. If left&front:
+2. If left&front:
    1. Get a random int between 1 and 2
    2. If num == 1:
       1. Go left
-   1. Else go front
-1. If front&right
+   3. Else go front
+3. If front&right
    1. Get a random int between 2 and 3
    2. If num == 2:
       1. Go front
-   1. Else go right
-1. If behind
+   3. Else go right
+4. If behind
    1. Go backwards and turn left / right
-1. Return
+5. Return
