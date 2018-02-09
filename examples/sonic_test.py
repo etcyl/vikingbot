@@ -12,5 +12,5 @@ ultrasonicSensorBack.setup_GPIO()
 
 while(True):
 #if distance is more than 10 cm. go back. Ig there is an obstacle stop
-    ultrasonicSensorBack.get_distance
-    GPIO.cleanup()
+        ultrasonicSensorBack.get_distance()
+        GPIO.cleanup()
