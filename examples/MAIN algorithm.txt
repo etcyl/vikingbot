@@ -9,6 +9,8 @@ MAIN:
       3. Class 3: Objects front and right (drive left or backward)
       4. Class 4: 1 object left (drive anywhere but left)
       5. Class 5: objects left and right (drive forward or backward)
+      6. Class 6: Object left and front (drive right or backward)
+      7. Class 7: Objects left, front, and right (drive backward)
    1. emote_and_drive(classifier label)
       1. If c_label == 1:
          1. drive()
