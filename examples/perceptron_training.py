@@ -13,10 +13,10 @@ import pandas as pd
 #Make a perceptron classifier 
 perc_class = perceptron.Perceptron(max_iter=100)
 
-#Data in scikit-learn is typically a Numpy array
-#Create Numpy array for tree data
+#Data in scikit-learn is typically a Numpy array, but here it is a Pandas DataFrame
 #Each input variable represents a sonic sensor reading
 #If the sensor reading is between 2 and 30, then it is treated as 1 otherwise it is treated as 0
+#Inputs A, B, and C represent sensor readings to the left, in front, and to the right of the Vikingbot
 
 inputs_and_targets = pd.DataFrame({
         'A' : [0, 0, 0, 0, 1, 1, 1, 1],
