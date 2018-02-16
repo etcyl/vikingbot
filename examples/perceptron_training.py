@@ -30,7 +30,7 @@ inputs_and_targets = pd.DataFrame({
 #Train the perceptron model on the inputs and targets
 perc_class.fit(inputs_and_targets[['A', 'B', 'C']], inputs_and_targets ['Targets'])
 
-#Get and print the aaverage performance
+#Get and print the average performance
 print("The mean accuracy is: ", perc_class.score(inputs_and_targets[['A', 'B', 'C']], inputs_and_targets ['Targets']))
 
 #Pickle the model for later use on the Vikingbot
