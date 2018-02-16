@@ -26,3 +26,6 @@ inputs_and_targets = pd.DataFrame({
         })
 
 perc_class.fit(inputs_and_targets[['A', 'B', 'C']], inputs_and_targets ['Targets'])
+
+#Get and print the aaverage performance
+print("The mean accuracy is: ", perc_class.score(inputs_and_targets[['A', 'B', 'C']], inputs_and_targets ['Targets']))
