@@ -1,7 +1,7 @@
 ﻿Set constants, import modules, do all initialization here
 
 MAIN: 
-1. obstacle_check(all) #Check front, left, and right for obstacles
+1. Check front, left, and right for obstacles
    1. Return learner classification
       1. Class 1: no objects left, right, or front
       2. Class 2: 1 object front
