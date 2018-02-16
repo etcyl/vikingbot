@@ -1,13 +1,14 @@
-﻿Set constants, import modules, do all initialization here
+Set constants, import modules, do all initialization here
 
 MAIN: 
 1. Check front, left, and right for obstacles
-   1. Return learner classification
-      1. Class 1: no objects left, right, or front
-      2. Class 2: 1 object front
-      3. Class 3: 1 object left
-      4. Class 4: 1 object right
-      5. Class 5: objects left, right, and front
+   1. Return classifier label
+      0. Class 0: no objects left, right, or front (drive anywhere)
+      1. Class 1: 1 object to the right (drive anywhere but right)
+      2. Class 2: 1 object front (drive anywhere but forward)
+      3. Class 3: Objects front and right (drive left or backward)
+      4. Class 4: 1 object left (drive anywhere but left)
+      5. Class 5: objects left and right (drive forward or backward)
    1. emote_and_drive(classifier label)
       1. If c_label == 1:
          1. drive()
