@@ -1,2 +1,2 @@
 # vikingbot
-Example of learners in sci-kit controlling a sonic sensor behavior using a RaspberryPi Vikingbot for obstacle avoidance.
+Example of classifiers (such as SVM-C, tree, and perceptron) in scikit-learn controlling a sonic sensor behavior using a RaspberryPi Vikingbot for obstacle avoidance.
