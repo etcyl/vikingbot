@@ -7,9 +7,6 @@ import motor_controller as MC
 import ultrasonic as US
 import RPi.GPIO as GPIO
 import support_funcs as sf
-import motor_controller as MC
-import ultrasonic as US
-import RPi.GPIO as GPIO
 
 #DO setup here
 #Set GPIO mode to BCM
